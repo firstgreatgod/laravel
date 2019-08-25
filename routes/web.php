@@ -22,7 +22,11 @@
     DELETE/projects/1(destroy)
 */
 
-Route::get('/', function () {
+use App\Repositories\UserRepository;
+
+
+Route::get('/', function (UserRepository $users) {
+    dd($users);
     return view('welcome');
 });
 

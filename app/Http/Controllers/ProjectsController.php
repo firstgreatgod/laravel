@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Services\Twitter;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
@@ -19,8 +20,10 @@ class ProjectsController extends Controller
         return view('projects.create');
     }
 
-    public function show(Project $project)
+    public function show(Project $project, Twitter $twitter)
     {
+
+        dd($twitter);
 
         return view('projects.show',compact('project'));
     }
